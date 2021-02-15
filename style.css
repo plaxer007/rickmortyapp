@@ -13,6 +13,7 @@ body,html{
 button{
     padding: 8px 40px;
     background-color: aquamarine;
+    border: none
 }
 div{
     padding: 50px;
