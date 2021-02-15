@@ -10,8 +10,16 @@ gender = document.querySelector('#gender');
 async function getCharacter(){
     try{
         // Type number of char you want to see
-        const number = prompt('type id number');
-
+        const number = +(prompt('type id number'));
+        if(number === 2137){
+            alert('Numer zarezerwowany dla papieża polaka')
+        } else if (number > 671){
+            alert('Podaj numer z zakresu 1-670')
+        }
+        else if(!number){
+                alert('Nie podałeś numeru')
+            }
+        
         // Get char
         const getSingleChar = await fetch(`https://rickandmortyapi.com/api/character/${number}`);
         const parseChar = await getSingleChar.json();
@@ -34,6 +42,7 @@ async function getCharacter(){
         }
         species.textContent = parseChar.species;
         gender.textContent = parseChar.gender;
+       
         return idChar;
     }
     catch(e){
