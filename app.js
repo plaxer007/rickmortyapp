@@ -11,13 +11,11 @@ async function getCharacter(){
     try{
         // Type number of char you want to see
         const number = +(prompt('type id number'));
-        if(number === 2137){
-            alert('Numer zarezerwowany dla papieża polaka')
-        } else if (number > 671){
-            alert('Podaj numer z zakresu 1-670')
+        if (number > 671){
+            alert('Type number from range 0-670')
         }
         else if(!number){
-                alert('Nie podałeś numeru')
+                alert('Invalid number, try again')
             }
         
         // Get char
